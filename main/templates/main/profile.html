@@ -1,0 +1,14 @@
+ {% extends 'main/base.html' %}
+{% block title %}
+	Profile Page
+{% endblock title %}
+{% load crispy_forms_tags %}
+{% block body %}
+	<form method="Post" class="card p-3" enctype="multipart/form-data">   
+		<img src="{{ user.profile.image.url }}" alt="" class="card-image center circle" height="120" width="120">
+		{% csrf_token %}
+		{{user.username}}
+		{{profile_form|crispy}}
+		<button type="submit" class="btn btn-secondary w-3">Update Profile</button>
+	</form>
+{% endblock %}

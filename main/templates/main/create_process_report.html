@@ -1,0 +1,13 @@
+{% extends 'main/lecturer_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+	Process Report
+{% endblock title %}
+{% load crispy_forms_tags %}
+{% block body %}
+	<form method="Post" enctype="multipart/form-data" class="card p-3">
+		{% csrf_token %}
+		{{form|crispy}}
+		<button type="submit" class="btn btn-secondary">Add Report</button>
+	</form>
+{% endblock %}

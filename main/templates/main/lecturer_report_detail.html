@@ -1,0 +1,15 @@
+{% extends 'main/lecturer_base.html' %}
+{% block title %}
+	Detail Page
+{% endblock %}
+{% block body %}
+	{% if request.user.supervisor == report.supervisor %}
+		<a href="{% url 'report_process' report.id %}" class="btn btn-secondary">Process Report</a>
+	{% endif %}	
+		<h4>{{report.title}}</h4>	
+		<h5>{{report.body}}</h5>
+				<hr />
+		<h5>Supervisor Remarks</h5>
+		<p>{{report.status}}</p>
+		<p>{{report.supervisor_remarks}}</p>
+{% endblock %}

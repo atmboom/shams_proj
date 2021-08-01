@@ -1,0 +1,2 @@
+Overview
+T-sell or t-sellr is an online marketplace open platform for users to advertise, buy and sell their products and showcase services to other buyers. It functions include allowing a user to upload the product with the addition of it's image -three in total, It's price, Description, Category, State and a date which is automatically added by the system. It also allow a user to update his product information, Delete a product.

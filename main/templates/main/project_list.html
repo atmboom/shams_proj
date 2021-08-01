@@ -1,0 +1,28 @@
+{% extends 'main/lecturer_base.html' %}
+{% load static %}
+{% block body %}
+	<div class="row">
+	<div class="col-lg-4">
+		<h5>Project List</h5>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Student</th>
+		      <th scope="col">Project Title</th>
+		      <th scope="col">Status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+	{% for profile in profiles %}						  	  	
+		    <tr>
+			<td><img src="{{ profile.profile.image.url }}" width="30" height="30" alt=""></td>
+		      <td> </a>{{profile.profile}} </td>
+				<td>{{profile.profile.project_title}}</td>			
+		      <td>  <a href="{% url 'update_project_title' profile.id %}" > {{profile.status}} </a> </td>			   
+		    </tr>
+	{% endfor %}								  
+		  </tbody>
+		</table>	
+		</div>
+{% endblock %}
