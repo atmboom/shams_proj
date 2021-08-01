@@ -4,12 +4,12 @@
 {% endblock %}
 {% block body %}
 	{% if request.user.supervisor == report.supervisor %}
-		<a href="{% url 'report_process' report.id %}" class="btn btn-secondary">Process Report</a>
+		<a href="{% url 'report_process' report.id %}" class="btn btn-secondary mt-3">Process Report</a>
 	{% endif %}	
-		<h4>{{report.title}}</h4>	
-		<h5>{{report.body}}</h5>
-				<hr />
-		<h5>Supervisor Remarks</h5>
-		<p>{{report.status}}</p>
+		<h4 class="lead text-center"><b>{{report.title}}</b></h4>	
+		<a href="{{report.file.url}}" class="lead">Download file</a>
+		<hr />
+		<p>Report Status:  {{report.status}}</p>		
+		<h5 class="lead">Supervisor Remarks</h5>
 		<p>{{report.supervisor_remarks}}</p>
 {% endblock %}

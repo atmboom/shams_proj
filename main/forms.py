@@ -10,12 +10,6 @@ class UserRegisterForm(UserCreationForm):
 		fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
 
-class ReportForm(forms.ModelForm):
-	class Meta:
-		model = Report
-		fields = ['title','body', 'supervisor']
-
-
 class ProcessReportForm(forms.ModelForm):
 	class Meta:
 		model = ProcessReport

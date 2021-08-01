@@ -22,7 +22,6 @@ class Supervisor(models.Model):
 
 class Report(models.Model):
 	title = models.CharField(max_length=100, null=True)
-	body = models.TextField(blank=True, null=True)
 	file = models.FileField(upload_to="files", null=True)
 	date_posted = models.DateTimeField(auto_now_add=True)
 	student = models.ForeignKey(User, on_delete=models.CASCADE)

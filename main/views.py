@@ -121,7 +121,7 @@ def profile(request):
 
 class CreateReport(LoginRequiredMixin, CreateView):
 	model = Report
-	fields = ['title','body', 'file', 'supervisor']
+	fields = ['title', 'file', 'supervisor']
 	template_name = 'main/create_report.html'
 	success_url = '/'
 
@@ -145,7 +145,7 @@ class LecturerReportDetail(DetailView):
 class ReportUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Report
 	context_object_name = 'reports'
-	fields = ['title','body', 'file', 'supervisor']
+	fields = ['title', 'file', 'supervisor']
 	template_name = 'main/update_report.html'
 	success_url = '/'
 
@@ -158,6 +158,6 @@ class ReportUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class ReportProcess(LoginRequiredMixin, UpdateView):
 	model = Report
 	context_object_name = 'reports'
-	fields = ['title','body', 'status', 'supervisor_remarks']
+	fields = ['title', 'status', 'supervisor_remarks']
 	template_name = 'main/report_process.html'
 	success_url = '/'

@@ -30,6 +30,8 @@
 		      <th scope="col">Student</th>
 		      <th scope="col">Supervisor</th>
 		      <th scope="col">Project Title</th>
+		      <th scope="col">Download</th>
+		      <th scope="col">Date</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -38,9 +40,11 @@
 		    	<td>*</td>
 		      <td><a href="{% url 'detail_report' report.id %}">{{report.title}}</a></td>
 		      <td>{{report.status}}</td>
-				<td>{{report.student}}</td>			
+					<td>{{report.student}}</td>			
 		      <td>{{report.supervisor}}</td>
 		      <td>{{report.student.profile.project_title}}</td>
+					<td><a href="{{report.file.url}}" class="lead">Download file</a></td>
+					<td>{{report.date_posted}}</td>
 		    </tr>
 	{% endfor %}								  
 		  </tbody>
