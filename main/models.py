@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from PIL import Image
 
+
 #vars
 status = (
 			("Accepted", "Accepted"),
@@ -40,6 +41,11 @@ class SuggesstedProjects(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	from django.urls import reverse
+
+	def get_absolute_url(self):
+		return reverse('S_suggested_projects')
 
 
 class ProcessReport(models.Model):
